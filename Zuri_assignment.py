@@ -1,22 +1,23 @@
 class Budget:
 
-    # total_ammount = 0
-
     def __init__(self, budget_category, total_amount=0):
         self.budget_categeory = budget_category
         self.total_amount = total_amount
 
-
     def deposit(self, amount):
+        # Method to deposit funds to budget
         self.total_amount = self.total_amount + amount
 
     def withdraw(self, amount):
+        # Method to withdraw funds from budget
         self.total_amount = self.total_amount - amount
     
     def balance(self):
+        # Method to return budget balance
         return self.total_amount
 
-    def transfer(self, budget_object):
+    def transfer_balance(self, budget_object):
+        # Method to transfer balance to another budget class
         transfer_amount = self.balance()
         budget_object.total_amount = transfer_amount
         self.total_amount = transfer_amount - self.total_amount
